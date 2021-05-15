@@ -1,0 +1,14 @@
+[package]
+name = "iris-integration-tests"
+version = "0.1.0"
+authors = ["Matthieu Buffet <matthieu@buffet.re>"]
+edition = "2018"
+
+[dependencies]
+iris = { path = "../libiris" }
+
+[[bin]]
+name = "01_spawn_worker"
+path = "src/01_spawn_worker.rs"
+
+
