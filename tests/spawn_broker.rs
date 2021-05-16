@@ -6,11 +6,11 @@ fn spawn_broker()
 {
     let exe = std::env::current_exe().unwrap();
     let ext = exe.extension().and_then(|e| Some(OsString::from(e)));
-    let mut dir = exe;
+    let mut dir = exe.clone();
     let mut worker_binary;
     loop {
-        dir = dir.parent().expect("worker binary not found in any parent directory").to_path_buf();
-        worker_binary = dir.with_file_name("01_spawn_worker");
+        dir = dir.parent().expect(&format!("worker binary not found in any parent directory of {}", exe.to_string_lossy())).to_path_buf();
+        worker_binary = dir.with_file_name("spawn_worker");
         if let Some(ext) = &ext {
             worker_binary.set_extension(ext);
         }
@@ -22,6 +22,6 @@ fn spawn_broker()
 
     let policy = Policy::new();
     let mut worker = Worker::new(&policy, &worker_binary, &[&worker_binary], &[]).expect("worker creation failed");
-    worker.wait_for_exit().expect("worker wait_for_exit failed");
+    assert_eq!(worker.wait_for_exit(), Ok(0), "worker wait_for_exit failed");
 }
 

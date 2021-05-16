@@ -8,7 +8,7 @@ edition = "2018"
 iris = { path = "../libiris" }
 
 [[bin]]
-name = "01_spawn_worker"
-path = "src/01_spawn_worker.rs"
+name = "spawn_worker"
+path = "src/spawn_worker.rs"
 
 
