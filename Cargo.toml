@@ -11,4 +11,7 @@ iris = { path = "../libiris" }
 name = "spawn_worker"
 path = "src/spawn_worker.rs"
 
+[[bin]]
+name = "environment_vars_sanitized_worker"
+path = "src/environment_vars_sanitized_worker.rs"
 
