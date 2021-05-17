@@ -6,6 +6,7 @@ edition = "2018"
 
 [dependencies]
 iris = { path = "../libiris" }
+libc = "0.2"
 
 [[bin]]
 name = "spawn_worker"
@@ -14,4 +15,8 @@ path = "src/spawn_worker.rs"
 [[bin]]
 name = "environment_vars_sanitized_worker"
 path = "src/environment_vars_sanitized_worker.rs"
+
+[[bin]]
+name = "inherited_resources_sanitized_worker"
+path = "src/inherited_resources_sanitized_worker.rs"
 
