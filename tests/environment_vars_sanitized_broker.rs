@@ -21,7 +21,7 @@ fn environment_vars_sanitized()
     let worker_binary = CString::new(worker_binary.as_os_str().to_string_lossy().as_bytes()).unwrap();
 
     let policy = Policy::new();
-    let mut worker = Worker::new(&policy, &worker_binary, &[&worker_binary], &[]).expect("worker creation failed");
+    let mut worker = Worker::new(&policy, &worker_binary, &[&worker_binary], &[], true).expect("worker creation failed");
     assert_eq!(worker.wait_for_exit(), Ok(0), "worker wait_for_exit failed");
 }
 
