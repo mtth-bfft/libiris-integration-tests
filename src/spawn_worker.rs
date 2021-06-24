@@ -1,6 +1,6 @@
-
 fn main()
 {
-    println!("Hello, world!");
+    println!(" [+] Worker main reached");
+    std::process::exit(42);
 }
 
