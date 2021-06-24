@@ -21,3 +21,15 @@ path = "src/environment_vars_sanitized_worker.rs"
 name = "inherited_resources_sanitized_worker"
 path = "src/inherited_resources_sanitized_worker.rs"
 
+[[bin]]
+name = "inherited_dup_handles_worker"
+path = "src/inherited_dup_handles_worker.rs"
+
+[[bin]]
+name = "stdout_stderr_worker"
+path = "src/stdout_stderr_worker.rs"
+
+[[bin]]
+name = "access_files_worker"
+path = "src/access_files_worker.rs"
+
